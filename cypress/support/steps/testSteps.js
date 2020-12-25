@@ -35,8 +35,6 @@ Then ("valido se o login é realizado com sucesso", () =>{
 })
 
 //Adicionar conta
-//cenario ok
-
 And("preencho o email e senha", () =>{
     PageTest.preenchemaillogin();
     PageTest.preenchersenhalogin();

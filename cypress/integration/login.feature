@@ -10,4 +10,4 @@ Scenario: Adicionar Conta
     And   preencho o email e senha
     When  clico para adicionar a conta
     Then  valido se a conta é adicionada com sucesso
-    
+       

@@ -10,7 +10,7 @@ class TestPage {
     acessarsite(){
         cy.visit(url)
         cy.wait(2000)
-        cy.screenshot()
+        //cy.screenshot()
     }
 
     //clicar novo cadastro
@@ -24,7 +24,7 @@ class TestPage {
      }
 
      preencheremail(){
-         cy.get(testelements.email()).type('testelaercio10@hotmail.com')
+         cy.get(testelements.email()).type('testelaercio22@hotmail.com')
      }
 
      inserirsenha(){
@@ -36,6 +36,18 @@ class TestPage {
      confirmarcadastro(){
          cy.get(testelements.confirmarcadastro()).contains('Usuário inserido com sucesso')
          cy.screenshot()
+     }
+     preenchemaillogin(){
+         cy.get(testelements.preencheremail()).type('testelaercio21@hotmail.com')
+     }
+     preenchersenhalogin(){
+         cy.get(testelements.preenchersenha()).type('1234')
+     }
+     botaoentrar(){
+         cy.get(testelements.botaoentrar()).first().click()
+     }
+     validarlogin(){
+         cy.get(testelements.acesso()).contains('Bem vindo, Laércio!')
      }
 }
 export default TestPage;

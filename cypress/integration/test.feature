@@ -5,3 +5,9 @@ Feature: Acessar site Seu Barriga
     When  clico em novo usuário
     And   preencho todos os campos
     Then  valido se o usuário é criado com sucesso
+
+
+Scenario: Realizar Login
+    Given que acesso o site
+    When  preencho o email e senha
+    Then  valido se o login é realizado com sucesso

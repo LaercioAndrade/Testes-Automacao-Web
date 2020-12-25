@@ -22,3 +22,14 @@ And("preencho todos os campos", () =>{
 Then("valido se o usuário é criado com sucesso", () =>{
     PageTest.confirmarcadastro();
 })
+
+//segundo cenário
+When("preencho o email e senha", () =>{
+   PageTest.preenchemaillogin();
+   PageTest.preenchersenhalogin();
+   PageTest.botaoentrar();
+})
+
+Then ("valido se o login é realizado com sucesso", () =>{
+    PageTest.validarlogin();
+})

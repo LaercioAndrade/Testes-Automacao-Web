@@ -33,3 +33,19 @@ When("preencho o email e senha", () =>{
 Then ("valido se o login é realizado com sucesso", () =>{
     PageTest.validarlogin();
 })
+
+//Adicionar conta
+
+And("preencho o email e senha", () =>{
+    PageTest.preenchemaillogin();
+    PageTest.preenchersenhalogin();
+    PageTest.botaoentrar();
+})
+
+When("clico para adicionar a conta", () =>{
+    PageTest.Adicionarconta();
+})
+
+Then("valido se a conta é adicionada com sucesso", ()=> {
+    PageTest.Validarconta()
+})

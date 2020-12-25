@@ -7,6 +7,7 @@ const url = Cypress.config("baseUrl")
 
 //acessar site
 class TestPage {
+
     acessarsite(){
         cy.visit(url)
         cy.wait(2000)
@@ -24,7 +25,7 @@ class TestPage {
      }
 
      preencheremail(){
-         cy.get(testelements.email()).type('testelaercio22@hotmail.com')
+         cy.get(testelements.email()).type('testelaercio00@hotmail.com')
      }
 
      inserirsenha(){
@@ -38,7 +39,7 @@ class TestPage {
          cy.screenshot()
      }
      preenchemaillogin(){
-         cy.get(testelements.preencheremail()).type('testelaercio21@hotmail.com')
+         cy.get(testelements.preencheremail()).type('testelaercio22@hotmail.com')
      }
      preenchersenhalogin(){
          cy.get(testelements.preenchersenha()).type('1234')
@@ -49,5 +50,20 @@ class TestPage {
      validarlogin(){
          cy.get(testelements.acesso()).contains('Bem vindo, Laércio!')
      }
+
+     //Adicionar conta
+     Adicionarconta(){
+         cy.get(testelements.contas()).first().click()
+         cy.get(testelements.adicionar()).first().click()
+         cy.get(testelements.nomeconta()).type('Itaú')
+         cy.get(testelements.botaosalvar()).first().click()
+         
+     }
+
+     Validarconta(){
+        cy.get(testelements.mensagemcontaadicionada()).contains('Conta adicionada com sucesso!')
+     }
+
+
 }
 export default TestPage;

@@ -12,5 +12,12 @@ class testElements {
    preenchersenha = () =>{return '#senha'}
    botaoentrar = () =>{return '.btn'}
    acesso = () =>{return '.alert'}
+
+   //Terceiro cenário
+   contas = () =>{return '.dropdown-toggle'}
+   adicionar = () =>{return '.dropdown-menu > li:nth-child(1) > a'}
+   nomeconta = () =>{return '.form-control'}
+   botaosalvar = () =>{return '.btn'}
+   mensagemcontaadicionada = () =>{return '.alert'}
 }
 export default testElements;

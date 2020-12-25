@@ -1,0 +1,106 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2020-12-25T00:52:27.703Z",
+    "end": "2020-12-25T00:52:43.799Z",
+    "duration": 16096,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "dd79bf15-acb4-4ba4-8732-6137b29984b5",
+      "title": "",
+      "fullFile": "cypress/integration/test.feature",
+      "file": "cypress/integration/test.feature",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "73ee8302-a483-41ee-879b-f52d92ab257f",
+          "title": "Acessar site Seu Barriga",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Cadastrar novo usuário",
+              "fullTitle": "Acessar site Seu Barriga Cadastrar novo usuário",
+              "timedOut": null,
+              "duration": 15832,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "const state = window.testState;\nreturn cy\n  .then(() => state.onStartScenario(scenario, indexedSteps))\n  .then(() =>\n    resolveAndRunBeforeHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() =>\n    indexedSteps.forEach((step) =>\n      stepTest.call(this, state, step, rowData)\n    )\n  )\n  .then(() =>\n    resolveAndRunAfterHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() => state.onFinishScenario(scenario));",
+              "err": {
+                "message": "AssertionError: Timed out retrying: Expected to find element: `.btn btn-primary`, but never found it.",
+                "estack": "AssertionError: Timed out retrying: Expected to find element: `.btn btn-primary`, but never found it.\n    at TestPage.botaoconfirmar (https://srbarriga.herokuapp.com/__cypress/tests?p=cypress/integration/test.feature:91:10)\n    at Context.eval (https://srbarriga.herokuapp.com/__cypress/tests?p=cypress/integration/test.feature:165:12)\n    at Context.resolveAndRunStepDefinition (https://srbarriga.herokuapp.com/__cypress/tests?p=cypress/integration/test.feature:11916:9)\n    at Context.eval (https://srbarriga.herokuapp.com/__cypress/tests?p=cypress/integration/test.feature:11257:35)",
+                "diff": null
+              },
+              "uuid": "68de159d-4027-42e6-b9d4-60d7ad308910",
+              "parentUUID": "73ee8302-a483-41ee-879b-f52d92ab257f",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "68de159d-4027-42e6-b9d4-60d7ad308910"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 15832,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.1"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false
+      },
+      "version": "5.1.0"
+    }
+  }
+}

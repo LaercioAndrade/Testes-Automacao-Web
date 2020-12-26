@@ -3,7 +3,7 @@
 import TestPage from '../Pageobjects/testPage'
 const PageTest = new TestPage
 
-
+//Realizar cadastro
 Given("que acesso o site", () => {
    PageTest.acessarsite();
 })
@@ -87,9 +87,75 @@ When("Crio uma Movimentação de Receita com status Pendente para a conta da Nub
 })
 
 //Remover Movimentação
-When("excluo o Movimentação", ()=>{
+When("excluo a Movimentação", ()=>{
     PageTest.ExcluirMovimentação()
 })
 Then("valido se a movimentação foi excluida com sucesso", ()=>{
     PageTest.Mensagemdemovimentaçãoexcluida()
+})
+
+//Mensagem de erro email já cadastrado
+When("preencho um email ja cadastrado na base na tela de novo usuário", ()=>{
+    PageTest.acessartelacadastro();
+    PageTest.preenchernome();
+    PageTest.preencheremail();
+    PageTest.inserirsenha();
+    PageTest.botaoconfirmar();
+})
+
+Then("valido se aparece a mensagem de endereço de email já utilizado", ()=>{
+    PageTest.Mensagemdeerroemailjacadastrado()
+})
+
+//Mensagem erro campo nome obrigatório
+When("acesso a tela de cadastrado", ()=>{
+    PageTest.acessartelacadastro();
+})
+
+And("preencho os dados faltando o campo nome", ()=>{
+    PageTest.preencheremail();
+    PageTest.inserirsenha();
+    PageTest.botaoconfirmar();
+})
+Then("valido se aparece a mensagem de erro referente ao nome", ()=>{
+    PageTest.Mensagemerronome();
+})
+    
+//Mensagem ero campo email obrigatório
+And("preencho os dados faltando o campo email", ()=>{
+    PageTest.preenchernome();
+    PageTest.inserirsenha();
+    PageTest.botaoconfirmar();
+})
+Then("valido se aparece a mensagem de erro referente ao email", ()=>{
+    PageTest.Mensagemerroemail();
+})
+
+//Mensagem erro campo senha obrigatório
+And("preencho os dados faltando o campo senha", ()=>{
+    PageTest.preenchernome();
+    PageTest.preencheremail();
+    PageTest.botaoconfirmar()
+})
+
+Then("valido se aparece a mensagem de erro referente a senha", ()=>{
+    PageTest.Mensagemerrosenha();
+})
+
+//Mensagem de erro conta já cadastrada
+And("adiciono uma conta já existente", ()=>{
+    PageTest.Adicionarconta();
+})
+
+Then("valido se aparece a mensagem de conta já existente para o nome inserido", ()=>{
+    PageTest.Mensagemerroconta();
+})
+
+//Realizar Logout
+And("clico em sair", ()=>{
+    PageTest.botaosair()
+})
+
+Then("valido se o sistema apresenta a tela de login", ()=>{
+    PageTest.validarlogout()
 })

@@ -51,5 +51,41 @@ Scenario: Adicionar Movimentação de Receita Pendente na Conta da Nubank
 Scenario: Remover Movimentação
     Given que acesso o site
     And   preencho o email e senha
-    When  excluo o Movimentação
+    When  excluo a Movimentação
     Then  valido se a movimentação foi excluida com sucesso
+
+
+Scenario: Validar mensagem de erro na criação de conta com email já cadastrado
+    Given  que acesso o site
+    When   preencho um email ja cadastrado na base na tela de novo usuário
+    Then   valido se aparece a mensagem de endereço de email já utilizado
+
+Scenario: Validar mensagem de erro na criação de usuário quando não preenche o nome
+    Given  que acesso o site
+    When   acesso a tela de cadastrado
+    And    preencho os dados faltando o campo nome
+    Then   valido se aparece a mensagem de erro referente ao nome
+
+Scenario: Validar mensagem de erro na criação de usuário quando não preenche o email
+    Given  que acesso o site
+    When   acesso a tela de cadastrado
+    And    preencho os dados faltando o campo email
+    Then   valido se aparece a mensagem de erro referente ao email 
+
+Scenario: Validar mensagem de erro na criação de usuário quando não preenche a senha
+    Given  que acesso o site
+    When   acesso a tela de cadastrado
+    And    preencho os dados faltando o campo senha
+    Then   valido se aparece a mensagem de erro referente a senha
+    
+Scenario: Validar mensagem de erro quando adiciona uma conta já cadastrada
+    Given   que acesso o site
+    When    preencho o email e senha
+    And     adiciono uma conta já existente
+    Then    valido se aparece a mensagem de conta já existente para o nome inserido
+
+Scenario: Realizar logout 
+    Given   que acesso o site
+    When    preencho o email e senha
+    And     clico em sair 
+    Then    valido se o sistema apresenta a tela de login

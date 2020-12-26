@@ -12,7 +12,7 @@ class TestPage {
     acessarsite(){
         cy.visit(url)
         cy.wait(2000)
-        //cy.screenshot()
+        cy.screenshot()
     }
 
     //clicar novo cadastro
@@ -26,7 +26,7 @@ class TestPage {
      }
 
      preencheremail(){
-         cy.get(testelements.email()).type('testelaercio99@hotmail.com')
+         cy.get(testelements.email()).type('testelaercio50@hotmail.com')
      }
 
      inserirsenha(){
@@ -50,19 +50,21 @@ class TestPage {
      }
      validarlogin(){
          cy.get(testelements.acesso()).contains('Bem vindo, Laércio!')
+         cy.screenshot()
      }
 
      //Adicionar conta
      Adicionarconta(){
          cy.get(testelements.contas()).first().click()
          cy.get(testelements.adicionar()).first().click()
-         cy.get(testelements.nomeconta()).type('Banco Inter')
+         cy.get(testelements.nomeconta()).type('Pic Pay')
          cy.get(testelements.botaosalvar()).first().click()
          
      }
 
      Validarconta(){
         cy.get(testelements.mensagemcontaadicionada()).contains('Conta adicionada com sucesso!')
+        cy.screenshot()
      }
 
      //Adicionar pagamento com situação Pago
@@ -83,6 +85,7 @@ class TestPage {
      }
      Mensagemdemovimentaçãoadicionada(){
          cy.get(testelements.mensagemmovimentação()).contains('Movimentação adicionada com sucesso!')
+         cy.screenshot()
      }
 
      //Adicionar pagamento com situação Pendente
@@ -96,6 +99,7 @@ class TestPage {
         cy.get(testelements.valor()).type('1000')
         cy.get(testelements.statuspendente()).click()
         cy.get(testelements.botaosalvar()).click()
+        cy.screenshot()
      }
     
      //Adicionar Despesa na conta Itaú
@@ -109,6 +113,7 @@ class TestPage {
         cy.get(testelements.valor()).type('1000')
         cy.get(testelements.statuspendente()).click()
         cy.get(testelements.botaosalvar()).click()
+        cy.screenshot()
      }
 
     //Adicionar Receita na conta da Nubank
@@ -122,6 +127,7 @@ class TestPage {
          cy.get(testelements.tipoconta()).select('Nubank')
          cy.get(testelements.statuspago()).click()
          cy.get(testelements.botaosalvar()).click()
+         cy.screenshot()
     }
 
 
@@ -136,6 +142,7 @@ class TestPage {
          cy.get(testelements.tipoconta()).select('Nubank')
          cy.get(testelements.statuspendente()).click()
          cy.get(testelements.botaosalvar()).click()
+         cy.screenshot()
     } 
 
     //Remover Movimentação
@@ -146,6 +153,47 @@ class TestPage {
 
     Mensagemdemovimentaçãoexcluida(){
         cy.get(testelements.mensagemmovimentaçãoremovida()).contains('Movimentação removida com sucesso!')
+        cy.screenshot()
+    }
+
+    //Mensagem de erro quando o email já está cadastrado
+    Mensagemdeerroemailjacadastrado(){
+        cy.get(testelements.mensagememailjautilizado()).contains("Endereço de email já utilizado")
+        cy.screenshot()
+    }
+
+    //Mensagem de erro quando falta preencher o nome no cadastro
+    Mensagemerronome(){
+        cy.get(testelements.mensagemerronome()).contains("Nome é um campo obrigatório")
+        cy.screenshot()
+        
+    }
+
+    //Mensagem de erro quando falta preencher o email no cadastro
+    Mensagemerroemail(){
+        cy.get(testelements.mensagemerroemail()).contains("Email é um campo obrigatório")
+        cy.screenshot()
+    }
+
+    //Mensagem de erro quando falta preencher a senha no cadastro
+    Mensagemerrosenha(){
+        cy.get(testelements.mensagemerrosenha()).contains("Senha é um campo obrigatório")
+        cy.screenshot()
+    }
+
+    //Mensagem  de erro quando adiciona uma conta já cadastrada
+    Mensagemerroconta(){
+        cy.get(testelements.mensagemerroconta()).contains("Já existe uma conta com esse nome!")
+        cy.screenshot()
+    }
+
+    //Realizar logout
+    botaosair(){
+        cy.get(testelements.botaosair()).click()
+    }
+    validarlogout(){
+        cy.get(testelements.validarlogout()).contains('Seu Barriga')
+        cy.screenshot()
     }
 }
 export default TestPage;

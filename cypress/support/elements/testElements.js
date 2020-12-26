@@ -45,5 +45,25 @@ class testElements {
    resumomensal = ()=>{return ':nth-child(4) > a'}
    excluirmovimentação = ()=>{return ':nth-child(1) .glyphicon'}
    mensagemmovimentaçãoremovida = ()=>{return '.alert'}
+
+   //Nono cenário
+   mensagememailjautilizado = ()=>{return '.alert'}
+
+
+   //Decimo cenário
+   mensagemerronome = ()=>{return '.alert'}
+
+   //Decimo primeiro cenario
+   mensagemerroemail = ()=>{return '.alert'}
+
+   //Decimo segundo cenário
+   mensagemerrosenha = ()=>{return '.alert'}
+
+    //Decimo terceiro cenário
+    mensagemerroconta = ()=>{return '.alert'}
+
+    //Decimo quarto cenario
+    botaosair = ()=>{return ':nth-child(5) > a'}
+    validarlogout = ()=>{return '.navbar-brand'}
 }
 export default testElements;

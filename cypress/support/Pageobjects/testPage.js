@@ -26,7 +26,7 @@ class TestPage {
      }
 
      preencheremail(){
-         cy.get(testelements.email()).type('testelaercio51@hotmail.com')
+         cy.get(testelements.email()).type('testelaercio52@hotmail.com')
      }
 
      inserirsenha(){
@@ -57,7 +57,7 @@ class TestPage {
      Adicionarconta(){
          cy.get(testelements.contas()).first().click()
          cy.get(testelements.adicionar()).first().click()
-         cy.get(testelements.nomeconta()).type('Mercado Pago')
+         cy.get(testelements.nomeconta()).type('C6 Bank')
          cy.get(testelements.botaosalvar()).first().click()
          
      }
